@@ -1,0 +1,10 @@
+[project]
+name = tretyak0ff.github.io
+url_style = relative
+
+
+[servers.ghpages]
+enabled = yes
+name = Github pages on repo
+target = ghpages://Tretyak0ff/tretyak0ff.github.io.git
+default = yes
