@@ -29,14 +29,17 @@
       </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
+
             <li{% if this._path == '/' %} class="nav-item active"{% endif%}>
+              
               <a href="{{ '/'|url }}" class="nav-link">Welcome</a></li>
                 {% for href, title in [
                   ['/blog', 'Blog'],
                   ['/projects', 'Projects'],  
                   ['/about', 'About']
                 ] %}
-            <li{% if this.is_child_of(href) %} class="nav-item"{% endif%}>
+                
+            <li{% if this.is_child_of(href) %} class="nav-item active"{% endif%}>
             <a href="{{ href|url }}" class="nav-link">{{ title }}</a></li>
                   {% endfor %}
           </ul>
