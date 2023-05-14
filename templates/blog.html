@@ -1,11 +1,27 @@
 {% extends "layout.html" %}
 {% from "macros/blog.html" import render_blog_post %}
 {% from "macros/pagination.html" import render_pagination %}
-{% block title %}{{ this.title }}{% endblock %}
-{% block body %}
-  {% for child in this.pagination.items %}
-    {{ render_blog_post(child, from_index=true) }}
-  {% endfor %}
 
-  {{ render_pagination(this.pagination) }}
-{% endblock %}
+
+
+
+<div class="page-header" id="banner">
+  <div class="row">
+    <div class="col-lg-8 col-md-7 col-sm-6">
+      <h1>{% block title %}{{ this.title }}{% endblock %}</h1>
+      <p class="lead">
+        {% block body %}
+          {% for child in this.pagination.items %}
+            {{ render_blog_post(child, from_index=true) }}
+          {% endfor %}
+        
+          {{ render_pagination(this.pagination) }}
+      {% endblock %} </p>
+    </div>
+    <div class="col-lg-4 col-md-5 col-sm-6">
+      <div class="photo">
+        
+      </div>
+    </div>
+  </div>
+</div>
