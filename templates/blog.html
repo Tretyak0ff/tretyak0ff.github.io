@@ -1,41 +1,17 @@
 {% extends "layout.html" %}
-{% from "macros/blog.html" import render_blog_post %}
-{% from "macros/pagination.html" import render_pagination %}
-{% block title %}{{ this.title }}{% endblock %}
-{% block body %}
 
-  <div class="bs-component">
-    <div>
+  {% from "macros/blog.html" import render_blog_post %}
+  {% from "macros/pagination.html" import render_pagination %}
+
+  {% block title %}{{ this.title }}{% endblock %}
+  {% block body %}
       {% for child in this.pagination.items %}
         {{ render_blog_post(child, from_index=true) }}
       {% endfor %}
 
       {{ render_pagination(this.pagination) }}
 
-      <ul class="pagination">
-        <li class="page-item disabled">
-          <a class="page-link" href="#">&laquo;</a>
-        </li>
-        <li class="page-item active">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">4</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">5</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">&raquo;</a>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
+    {% macro render_pagination(pagination) %}
+  {% endmacro %}
+
 {% endblock %}
