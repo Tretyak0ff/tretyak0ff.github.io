@@ -29,6 +29,12 @@
       </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
+            {% for id, item in bag('menu').items() %}
+              <li{% if this.is_child_of(item.path) %} class="active"{% endif
+                %}><a href="{{ item.path|url }}" class="nav-link">{{ item.label }}</a></li>
+            {% endfor %}
+          </ul>
+          <!-- <ul class="navbar-nav me-auto">
 
             <li{% if this._path == '/' %} class="nav-item active"{% endif%}>
               
@@ -42,7 +48,7 @@
             <li{% if this.is_child_of(href) %} class="nav-item active"{% endif%}>
             <a href="{{ href|url }}" class="nav-link">{{ title }}</a></li>
                   {% endfor %}
-          </ul>
+          </ul> -->
           <ul class="navbar-nav ms-md-auto">
             <li class="nav-item">
               <a target="_blank" rel="noopener" class="nav-link" href="https://github.com/Tretyak0ff/tretyak0ff.github.io">
@@ -56,6 +62,11 @@
       </div>
     </div>
   </div>
+
+  <div id="navbar" class="collapse navbar-collapse">
+
+  </div>
+
   <div class="container">  
     {% block body %}{% endblock %}
   </div>
