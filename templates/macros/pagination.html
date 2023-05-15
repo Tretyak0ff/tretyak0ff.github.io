@@ -1,23 +1,6 @@
-<!-- <div class="bs-component">
-  <div>
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link" href="#">&laquo;</a>
-      </li>
-      <li class="page-item active">
-        <a class="page-link" href="#">1</a>
-      </li>
-      <li class="page-item">
-        <a class="page-link" href="#">&raquo;</a>
-      </li>
-    </ul>
-  </div>
-</div> -->
-{% macro render_pagination(pagination) %}
-
+{% macro render_pagination(pagination, endpoint) %}
 <div class="bs-component">
   <div>
-
     <ul class="pagination">
       {% if pagination.has_prev %}
         <li class="page-item">
@@ -27,25 +10,36 @@
         <li class="page-item disabled">
           <a class="page-link" href="#">&laquo; Previous</a>
         </li>
-        <!-- <a class="disabled">&laquo; Previous</a> -->
       {% endif %}
 
-      <!-- | <strong>{{ pagination.page }}</strong> | -->
-      <li class="page-item">
-        <a class="page-link" href="#"> {{ pagination.page }}</a>
-      </li>
-
-      {% if pagination.has_next %}
-s       <li class="page-item">
-          <a class="page-link" href="{{ pagination.next|url }}">Next &raquo;</a>
+       <!-- all page numbers -->
+      {% for page_num in pagination.iter_pages() %}
+        {% if page_num %}
+        {% if page_num != pagination.page %}
+	<li class="page-item">
+	  <a class="page-link" href="{{ pagination.for_page(page_num)|url }}">{{ page_num }}</a>
+	</li>
+        {% else %}
+        <li class="page-item disabled">
+        <a class="page-link" href="#">{{ page_num }}</a>
         </li>
+      {% endif %}
+      {% else %}
+        <li class="page-item disabled">
+	  <a class="page-link" href="…">…</a>	  
+        </li>
+       {% endif %}
+      {% endfor %}
+      {% if pagination.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="{{ pagination.next|url }}">Next &raquo;</a>
+      </li>
       {% else %}
         <li class="page-item disabled">
           <a class="page-link" href="#">Next &raquo;</a>
         </li>
       {% endif %}
       </ul>
-
   </div>
 </div>
 {% endmacro %}

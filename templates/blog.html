@@ -5,9 +5,9 @@
 
   {% block title %}{{ this.title }}{% endblock %}
   {% block body %}
-      {% for child in this.pagination.items %}
+    {% for child in this.pagination.items %}
         {{ render_blog_post(child, from_index=true) }}
-      {% endfor %}
+    {% endfor %}
 
       {{ render_pagination(this.pagination) }}
 
