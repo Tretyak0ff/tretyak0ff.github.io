@@ -2,14 +2,13 @@ title: About this Website
 ---
 body:
 
-This is a website that was made with the Lektor quickstart.
+This is a website that was generated using the following technologies:
 
-And it does not contain a lot of information.
+Content Managment System - https://www.getlektor.com/
 
-            Based on 
-            <a href="https://www.getlektor.com/" rel="nofollow">Lektor</a>,
-            <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>,
-            <a href="https://bootswatch.com/slate/" rel="nofollow">Theme for Bootstrap</a>. 
+Deploy with - https://pages.github.com/
+
+Theme with - https://bootswatch.com/slate/ 
             
 ---
-_template: about.html
+
