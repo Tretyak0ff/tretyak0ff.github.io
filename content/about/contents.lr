@@ -5,5 +5,11 @@ body:
 This is a website that was made with the Lektor quickstart.
 
 And it does not contain a lot of information.
+
+            Based on 
+            <a href="https://www.getlektor.com/" rel="nofollow">Lektor</a>,
+            <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>,
+            <a href="https://bootswatch.com/slate/" rel="nofollow">Theme for Bootstrap</a>. 
+            
 ---
 _template: about.html
