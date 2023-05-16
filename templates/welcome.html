@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.title }}{% endblock %}
 
+
 {% block body %}
     <div class="page-header" id="banner">
       <div class="row">
@@ -8,11 +9,11 @@
           <h1>{{ this.title }}</h1>
           <p class="lead"> {{ this.body }} </p>
         </div>
-        <div class="col-lg-4 col-md-5 col-sm-6">
-          <div class="photo">
-            <!--add photos class="rounded-circle"-->
-          </div>
-        </div>
+	<div class="col-lg-4 col-md-5 col-sm-6">
+	  <div class="align-middle">
+	    <img src="{{ '/static/logo.jpg' }}" class="rounded-circle" style="width: 250px;" alt="">
+	  </div>
+	</div>
       </div>
     </div>
 {% endblock %}
