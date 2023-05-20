@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.title }}{% endblock %}
+
+{% block body %}
+<div class="row row-cols-auto p-3">
+  <div class="col">
+    <h1>{{ this.title }}</h1>
+  </div>
+</div>
+<div class="row p-3">
+  <div class="col-sm-8">
+    {% block blog_body %}{% endblock %}
+  </div>
+  <div class="col-sm-4">
+    <h3>About This Blog</h3>
+    <p>
+      This blog was created with the goal of leaving a digital footprint on the global web.
+      And also detailed records about my new projects will be posted here.
+    <p>
+    <h3>Missed a Post?</h3>
+    <ul>
+      <!-- <li><a href="{{ '@blog-archive'|url }}">Blog Archives</a></li> -->
+      <p>- I'm working on it...</p>
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,17 +1,32 @@
-{% extends "layout.html" %}
+{% extends "blog-layout.html" %}
+{% from "macros/pagination.html" import render_pagination %}
 
-  {% from "macros/blog.html" import render_blog_post %}
-  {% from "macros/pagination.html" import render_pagination %}
+{% block title %}{{ this.title }}{% endblock %}
+  {% block blog_body %}
+  {% for post in this.pagination.items %}
 
-  {% block title %}{{ this.title }}{% endblock %}
-  {% block body %}
-    {% for child in this.pagination.items %}
-        {{ render_blog_post(child, from_index=true) }}
-    {% endfor %}
+  <div class="row pb-3">
+    <div class="col">
+      <div class="d-grid gap-1" >
+        <a class="btn btn-dark" href="{{ post|url }}" role="button"  style="text-align: left !important;">
+          <h4>
+            {{ post.title }}
+          </h4>
+          <p>
+            {{ post.summary }}
+          </p>
+          <small class="text-muted">
+            written by {{ post.author }}
+            on {{ post.pub_date|dateformat }}
+          </small>
+        </a>
+      </div>
+    </div>
+  </div>
 
-      {{ render_pagination(this.pagination) }}
+  {% endfor %}
 
-    {% macro render_pagination(pagination) %}
-  {% endmacro %}
-
+  {% if this.pagination.pages > 1 %}
+    {{ render_pagination(this.pagination) }}
+  {% endif %}
 {% endblock %}
