@@ -30,31 +30,5 @@
     </div>
   </div>
 </div>
-
-
-
-
-  <div class="bs-component">
-    <div class="card">
-      <div class="card-body">
-      {% if from_index %}
-        <h4 class="card-title"><a href="{{ post|url }}" class="card-link">{{ post.title }}</a></h4>
-      {% else %}
-        <h4 class="card-subtitle mb-2 text-muted">{{ post.title }}</h4>
-      {% endif %}
-      <p class="card-text">
-        written by
-        {% if post.twitter_handle %}
-          <a href="https://twitter.com/{{ post.twitter_handle
-            }}" class="card-link">{{ post.author or post.twitter_handle }} </a>
-        {% else %}
-          {{ post.author }}
-        {% endif %}
-        on {{ post.pub_date }}
-      </p>
-      {{ post.body }}
-    </div>
-  </div>
-</div>
 {% endmacro %}
 
