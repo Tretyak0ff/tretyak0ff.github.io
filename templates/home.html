@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block title %}{{ this.title }}{% endblock %}
 
+
 {% block body %}
 <div class="row row-cols-auto p-3">
   <div class="col">
@@ -10,6 +11,9 @@
 <div class="row p-3">
   <div class="col-sm-8">
     {{ this.body }}
+  </div>
+  <div class="col-sm-4">
+    <img src="{{ '/static/img/logo.jpg' }}" class="rounded-circle mx-auto d-block" style="width: 300px;" alt="">
   </div>
 </div>
 {% endblock %}
