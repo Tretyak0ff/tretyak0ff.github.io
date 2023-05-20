@@ -6,13 +6,13 @@
   {% for post in this.pagination.items %}
 
   <div class="row pb-3">
-    <div class="col">
+    <div class="col sm-8">
       <div class="d-grid gap-1" >
         <a class="btn btn-dark" href="{{ post|url }}" role="button"  style="text-align: left !important;">
-          <h4>
+          <h3>
             {{ post.title }}
-          </h4>
-          <p>
+          </h3>
+          <p class="text-muted">
             {{ post.summary }}
           </p>
           <small class="text-muted">
