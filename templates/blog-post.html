@@ -17,19 +17,19 @@
   {% set siblings = this.get_siblings() %}
   {% set older = siblings.next_page %}
   {% set newer = siblings.prev_page %}
-  <div class="row p-3 text-center">
+  <div class="row text-center">
     {% if older %}
-    <div class="col-sm-6">
-      <button type="button" class="btn btn-primary">
-      <a href="{{ older|url }}" class="nav-link">&laquo; Previous: {{ older.title }}</a>
-    </button>
+    <div class="col-sm-6 p-2">
+        <button type="button" class="btn btn-primary">
+          <a href="{{ older|url }}" class="nav-link">&laquo; Previous: {{ older.title }}</a>
+        </button>
     </div>
     {% endif %}
     {% if newer %}
-    <div class="col-sm-6">
-      <button type="button" class="btn btn-primary">
-        <a href="{{ newer|url }}" class="nav-link"> Next: {{ newer.title }} &raquo;</a>
-    </button>
+    <div class="col-sm-6 p-2">
+        <button type="button" class="btn btn-primary">
+          <a href="{{ newer|url }}" class="nav-link"> Next: {{ newer.title }} &raquo;</a>
+        </button>
+      </div>
     {% endif %}
-  </div>
 {% endblock %}  
