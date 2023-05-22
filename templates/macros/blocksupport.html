@@ -1,0 +1,13 @@
+  {% macro render_full_width_blocks(blocks, classes='col-md-8 col-md-offset-2') %}
+    {% if blocks and blocks[0]._flowblock != 'banner' and caller %}
+      {{ render_container(caller(), classes) }}
+    {% endif %}
+    {% for blk in blocks %}
+      {% if blk._flowblock in full_width_blocks %}
+        {{ blk }}
+        {% if loop.first and caller %}{{ render_container(caller(), classes) }}{% endif %}
+      {% else %}
+        {{ render_container(blk, classes) }}
+      {% endif %}
+    {% endfor %}
+  {% endmacro %}
