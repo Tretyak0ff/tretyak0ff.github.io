@@ -1,7 +1,6 @@
 {% extends "blog-layout.html" %}
 {% from "macros/pagination.html" import render_pagination %}
 
-{% block title %}{{ this.title }}{% endblock %}
   {% block blog_body %}
   {% for post in this.pagination.items %}
 
